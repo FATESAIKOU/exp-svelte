@@ -1,10 +1,22 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+
+  let result: String = '';
+  onMount(async () => {
+    const response = await fetch('/api/foo');
+    const data = await response.json();
+    result = data.result;
+  });
 </script>
 
 <main>
+  <main>
+    <h1>From Backend! {result}</h1>
+  </main>
+
   <div>
     <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
       <img src={viteLogo} class="logo" alt="Vite Logo" />
