@@ -4,14 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite build && vite preview",
-    "backend": "cd easy-backend && source venv/bin/activate && pip install -r requirements.txt && python3 app.py",
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
-    "test": "playwright test",
+    "backend": "cd easy-backend && source venv/bin/activate && pip install -r requirements.txt && python3 app.py",
+    "dev": "vite",
+    "dev:msw": "VITE_USE_MSW=true npm run dev",
     "dev:backend": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run dev\"",
-    "preview:backend": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run preview\""
+    "preview": "vite build && vite preview",
+    "preview:msw": "VITE_USE_MSW=true npm run preview",
+    "preview:backend": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run preview\"",
+    "test:unit": "echo 'under construction!!'",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.0",
