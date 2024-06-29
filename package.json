@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "backend": "cd easy-backend && source venv/bin/activate && pip install -r requirements.txt && python3 app.py",
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
     "test": "playwright test"
   },

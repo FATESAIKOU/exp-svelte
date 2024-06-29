@@ -33,9 +33,16 @@ export default defineConfig({
       use: { ...devices["iPhone 12"] },
     },
   ],
-  webServer: {
-    command: "npm run preview -- --port 3008",
-    port: 3008,
-    reuseExistingServer: !process.env.CI,
-  },
+  webServer: [
+      {
+        command: "npm run preview -- --port 3008",
+        port: 3008,
+        reuseExistingServer: !process.env.CI,
+      },
+      {
+        command: "npm run backend",
+        port: 5000,
+        reuseExistingServer: !process.env.CI,
+      },
+  ],
 });
