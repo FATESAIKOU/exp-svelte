@@ -5,11 +5,11 @@ import App from './App.svelte';
 
 describe('App', () => {
     describe('CategoryB', () => {
-        test('shows proper heading when rendered', () => {
+        test('shows proper heading when rendered', async () => {
             render(App);
             
             const result = 'mocked foo!';
-            const targetH1 = screen.getAllByRole('heading', { level: 1 }).find(h => h.textContent === `From Backend! ${result}`);
+            const targetH1 = await screen.findByRole('heading', { name: `From Backend! ${result}`, level: 1 });
 
             expect(targetH1).toBeInTheDocument();
         })
