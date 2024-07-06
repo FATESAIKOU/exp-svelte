@@ -13,21 +13,25 @@
     "preview": "vite build && vite preview",
     "preview:msw": "VITE_USE_MSW=true npm run preview",
     "preview:backend": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run preview\"",
-    "test:unit": "echo 'under construction!!'",
+    "test:unit": "vitest",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.0",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/svelte": "^5.2.0",
     "@tsconfig/svelte": "^5.0.4",
     "@types/node": "^20.14.9",
     "concurrently": "^8.2.2",
+    "jsdom": "^24.1.0",
     "msw": "^2.3.1",
     "svelte": "^4.2.18",
     "svelte-check": "^3.8.1",
     "tslib": "^2.6.3",
     "typescript": "^5.2.2",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vitest": "^1.6.0"
   },
   "msw": {
     "workerDirectory": [
