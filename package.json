@@ -14,10 +14,19 @@
     "preview:msw": "VITE_USE_MSW=true npm run preview",
     "preview:backend": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run preview\"",
     "test:unit": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.0",
+    "@storybook/addon-essentials": "^8.1.11",
+    "@storybook/addon-interactions": "^8.1.11",
+    "@storybook/addon-links": "^8.1.11",
+    "@storybook/blocks": "^8.1.11",
+    "@storybook/svelte": "^8.1.11",
+    "@storybook/svelte-vite": "^8.1.11",
+    "@storybook/test": "^8.1.11",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/svelte": "^5.2.0",
@@ -26,6 +35,7 @@
     "concurrently": "^8.2.2",
     "jsdom": "^24.1.0",
     "msw": "^2.3.1",
+    "storybook": "^8.1.11",
     "svelte": "^4.2.18",
     "svelte-check": "^3.8.1",
     "tslib": "^2.6.3",
