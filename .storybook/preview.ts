@@ -1,5 +1,8 @@
 import type { Preview } from "@storybook/svelte";
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { worker } from '../mocks/mswSetupWorker'
+
+worker.start();
 
 const customViewports = {
   smallMobile: {
